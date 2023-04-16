@@ -10,6 +10,8 @@ const SignUpForm = () => {
     rounded-lg backdrop-blur-0
      z-10 mr-20 h-[28rem] w-[50%]'>
 
+     
+
      <form action="" className='space-y-5 w-[80%] ml-16'>
 
         <InputText/>
