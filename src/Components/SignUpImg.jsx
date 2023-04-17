@@ -7,7 +7,7 @@ const SignUpImg = () => {
      <p className="text-3xl mx-12 my-10" >Create Your Account</p>
 
       <img src="images/signup.jpg" alt=""
-      class="mt-20 rounded-md opacity-60 "
+      className="mt-20 rounded-md opacity-60 "
       />
     </div>
   )

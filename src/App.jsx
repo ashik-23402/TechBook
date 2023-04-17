@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import Nav from './Components/Nav'
-import Courses from './Components/Courses'
-import SignUpForm from './Components/SignUpForm'
-import LoginForm from './Components/LoginForm'
-import Quiz from './Components/Quiz'
 import Signup from './Components/Pages/Signup'
 import Login from './Components/Pages/Login'
 import Home from './Components/Pages/Home'
 import QuizPage from './Components/Pages/QuizPage'
+import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 
 
 function App() {
@@ -15,18 +12,19 @@ function App() {
 
   return (
     <div>
-      
-     {/* <p className='text-red-600'>Ashik broh</p> */}
-     <Nav/>
-     {/* <Courses/> */}
-     {/* <SignUpForm/> */}
-     {/* <LoginForm/> */}
-     {/* <Quiz/> */}
 
-     {/* <Signup/> */}
-      {/* <Home/> */}
-     {/* <Login/> */}
-     <QuizPage/>
+      <Router>
+      <Nav/>
+      <Routes>
+
+        
+        <Route exact path='/' Component={Home}/>
+        <Route exact path='/signup' Component={Signup}/>
+        <Route exact path='/login' Component={Login}/>
+        <Route exact path='/quiz' Component={QuizPage}/>
+        
+        </Routes>
+      </Router>
 
      
     </div>
