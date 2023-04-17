@@ -5,6 +5,7 @@ import Login from './Components/Pages/Login'
 import Home from './Components/Pages/Home'
 import QuizPage from './Components/Pages/QuizPage'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
+import {AuthProvider} from './Context/AuthContext'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div>
 
       <Router>
+     <AuthProvider>
       <Nav/>
       <Routes>
 
@@ -24,6 +26,8 @@ function App() {
         <Route exact path='/quiz' Component={QuizPage}/>
         
         </Routes>
+
+        </AuthProvider>
       </Router>
 
      

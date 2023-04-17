@@ -1,9 +1,10 @@
 import React from 'react'
 
-const InputText = () => {
+const InputText = ({type,placeholder,changeHandler=null}) => {
   return (
-    <input type="text"  placeholder="Enter name" 
+    <input type={type}  placeholder={placeholder} 
         className="h-10 w-[80%] rounded-md"
+        onChange={changeHandler}
     />
   )
 }

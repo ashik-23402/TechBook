@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Submitbtn = () => {
+const Submitbtn = ({disable}) => {
   return (
-    <input type="button" value="Submit Now"
+    <input disabled={disable} type="submit" value="Submit Now"
             className="h-10 w-[80%] rounded-md bg-green-400"/>
   )
 }
