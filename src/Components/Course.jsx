@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 const Course = () => {
   return (
+    
+    <Link to="/quiz">
     <div className=" flex flex-col bg-white
     rounded-md m-5">
 
@@ -21,6 +24,7 @@ const Course = () => {
 
 
     </div>
+    </Link>
   )
 }
 

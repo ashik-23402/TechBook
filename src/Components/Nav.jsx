@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
 
@@ -11,11 +12,12 @@ const Nav = () => {
    bg-gradient-to-tr from-[rgb(255,255,255,0.7)] to-[rgb(255,255,255,0.5)]
     backdrop-opacity-10 h-10">
 
+    <Link to="/">
     <p className="p-1 italic text-xl font-semibold">TYS</p>
-
+    </Link>
     <div className="space-x-2 p-1">
-        <a href="">sign up</a>
-        <a href="">login</a>
+        <Link to="/signup">sign up</Link>
+        <Link to="/login">login</Link>
     </div>
    </nav>
     
