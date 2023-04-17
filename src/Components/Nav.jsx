@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {useAuth} from '../Context/AuthContext'
 
 const Nav = () => {
+
+  const {currentUser,logout} = useAuth();
 
 
   
@@ -15,10 +18,25 @@ const Nav = () => {
     <Link to="/">
     <p className="p-1 italic text-xl font-semibold">TYS</p>
     </Link>
-    <div className="space-x-2 p-1">
+
+    {
+      currentUser ? (
+        <div className="flex space-x-2 p-1">
+        <Link to="/">{currentUser.displayName}</Link>
+        <p onClick={logout}>logout</p>
+    </div>
+
+      ): (
+        <div className="space-x-2 p-1">
         <Link to="/signup">sign up</Link>
         <Link to="/login">login</Link>
     </div>
+      )
+    }
+
+    
+
+
    </nav>
     
   )
