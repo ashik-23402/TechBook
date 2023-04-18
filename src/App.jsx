@@ -37,7 +37,7 @@ function App() {
 
         <Route  path='/quiz' element={<PrivateRoute/>}>
 
-            <Route exact path='/quiz' element={<QuizPage/>}/> 
+            <Route exact path='/quiz/:name' element={<QuizPage/>}/> 
         
         </Route>
 
