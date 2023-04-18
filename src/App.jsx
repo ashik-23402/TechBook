@@ -6,6 +6,8 @@ import Home from './Components/Pages/Home'
 import QuizPage from './Components/Pages/QuizPage'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import {AuthProvider} from './Context/AuthContext'
+import PrivateRoute from './Components/PrivateRoute'
+import PublicRoute from './Components/PublicRoute'
 
 
 function App() {
@@ -21,9 +23,25 @@ function App() {
 
         
         <Route exact path='/' Component={Home}/>
-        <Route exact path='/signup' Component={Signup}/>
-        <Route exact path='/login' Component={Login}/>
-        <Route exact path='/quiz' Component={QuizPage}/>
+
+
+        <Route exact path='/signup' element={<PublicRoute/>}>
+            <Route exact path='/signup' element={<Signup/>}/> 
+        </Route> 
+
+
+        <Route exact path='/login' element={<PublicRoute/>}>
+            <Route exact path='/login' element={<Login/>}/> 
+        </Route> 
+
+
+        <Route  path='/quiz' element={<PrivateRoute/>}>
+
+            <Route exact path='/quiz' element={<QuizPage/>}/> 
+        
+        </Route>
+
+      
         
         </Routes>
 
