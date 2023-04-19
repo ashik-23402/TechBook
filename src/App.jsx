@@ -8,6 +8,7 @@ import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import {AuthProvider} from './Context/AuthContext'
 import PrivateRoute from './Components/PrivateRoute'
 import PublicRoute from './Components/PublicRoute'
+import ScorePage from './Components/Pages/ScorePage'
 
 
 function App() {
@@ -40,6 +41,14 @@ function App() {
             <Route exact path='/quiz/:name' element={<QuizPage/>}/> 
         
         </Route>
+
+        
+        <Route  path='/score' element={<PrivateRoute/>}>
+
+            <Route exact path='/score/:score' element={<ScorePage/>}/> 
+        
+        </Route>
+
 
       
         

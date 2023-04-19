@@ -12,7 +12,7 @@ const Course = ({coursename}) => {
        <p className="h-40 w-56 bg-white 
        bg-[url('/images/a2.png')] bg-cover bg-center bg-no-repeat
        text-center py-14 text-3xl
-       text-white font-semibold
+       text-black font-semibold
        ">{coursename}</p>
 
        

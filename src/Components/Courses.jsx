@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Courses = () => {
 
 
-  const courseList = ["Linux","DevOps","Networking","Cloud","Docker","Kubernetes"]
+  const courseList = ["Linux","DevOps","Docker"]
 
   const singleCourse = courseList.map(cc => <Course coursename={cc}/>);
 

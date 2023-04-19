@@ -16,6 +16,8 @@ const Quiz = () => {
 
   const [data,setData] = useState(null);
   const [quizno,setQuizno] = useState(0);
+  const [answer , setAnswer] = useState();
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -32,12 +34,41 @@ const Quiz = () => {
 
   const btnchange = ()=>{
 
-    if(quizno === 10){
+    if(quizno === 9){
+
+      setScore(score);
+      console.log(score);
       
-      return Navigate("/"); 
+      return Navigate(`/score/${score}`); 
     }
 
+    if(data[quizno].correct_answers.answer_a_correct){
+
+      let cans = data[quizno].answers.answer_a;
+      if(cans === answer){setScore(score+5);}
+
+    }
+    else if(data[quizno].correct_answers.answer_b_correct){
+
+      let cans = data[quizno].answers.answer_b;
+      if(cans === answer){setScore((score+5));}
+
+    }
+    else if(data[quizno].correct_answers.answer_c_correct){
+
+      let cans = data[quizno].answers.answer_c;
+      if(cans === answer){setScore(score+5);}
+
+    }
+    else if(data[quizno].correct_answers.answer_d_correct){
+      let cans = data[quizno].answers.answer_d;
+      if(cans === answer){setScore(score+5);}
+
+    }
+
+    
     setQuizno(quizno+1);
+    
 
   }
 
@@ -48,8 +79,18 @@ const Quiz = () => {
     return <p>Loading...</p>;
   }
 
+
+  const handleInputchange = (e)=>{
+
+    let a = e.target.value;
+    // console.log(answer);
+    setAnswer(a);
+
+  }
+
+  console.log(data[quizno].correct_answers.answer_a_correct);
   console.log(data[quizno].answers.answer_a);
-  console.log(quizno);
+  // console.log(quizno);
 
 
   return (
@@ -60,10 +101,10 @@ const Quiz = () => {
      z-10">
 
         <p className="text-3xl font-semibold"> {data[quizno].question} </p>
-        <Option ans = {data[quizno].answers.answer_a}/>
-        <Option ans = {data[quizno].answers.answer_b}/>
-        <Option ans = {data[quizno].answers.answer_c}/>
-        <Option ans = {data[quizno].answers.answer_d}/>
+        <Option ans = {data[quizno].answers.answer_a} handler = {handleInputchange} prev={answer}/>
+        <Option ans = {data[quizno].answers.answer_b} handler = {handleInputchange} prev={answer}/>
+        <Option ans = {data[quizno].answers.answer_c} handler = {handleInputchange} prev={answer}/>
+        <Option ans = {data[quizno].answers.answer_d} handler = {handleInputchange} prev={answer}/>
 
 
 
