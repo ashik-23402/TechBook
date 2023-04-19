@@ -17,10 +17,6 @@ function App() {
   return (
     <div>
 
-
-    
-
-
       <Router>
      <AuthProvider>
       <Nav/>
