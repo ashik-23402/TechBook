@@ -21,11 +21,11 @@ function App() {
      <AuthProvider>
       <Nav/>
 
-       <div class="h-44
+       <div className="h-44
     w-44 bg-[rgb(255,255,255,0.3)] absolute -right-0 mt-3 
     rounded-[50%]"></div>
 
-    <div class="h-44
+    <div className="h-44
     w-44 bg-[rgb(255,255,255,0.3)] absolute left-1 bottom-2
     rounded-[50%] m-2"></div>
 
